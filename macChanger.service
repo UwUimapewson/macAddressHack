@@ -1,0 +1,10 @@
+[Unit]
+Description=macadress hack thing by cmd/sam t
+
+[Service]
+ExecStart=/bin/bash -c "ip link set wlan0 down && macchanger -e wlan0 && ip link set wlan0 up"
+ExecStop=cat "uhh just run sudo systemctl disable {whatever you saved this as.service} and reboot your system"
+
+[Install]
+WantedBy=multi-user.target
+
